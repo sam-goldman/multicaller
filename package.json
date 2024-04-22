@@ -9,5 +9,8 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vectorized/multicaller.git"
+  },
+  "dependencies": {
+    "@sphinx-labs/plugins": "^0.31.11"
   }
 }
