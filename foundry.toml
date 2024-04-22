@@ -10,11 +10,21 @@ optimizer = true
 optimizer_runs = 1_000
 gas_limit = 100_000_000 # ETH is 30M, but we use a higher value.
 remappings = [
-  "forge-std=test/utils/forge-std/"
+  "forge-std=test/utils/forge-std/",
+  "@sphinx-labs/contracts/=lib/sphinx/packages/contracts/contracts/foundry"
 ]
+extra_output = ['storageLayout']
+fs_permissions = [{ access = "read-write", path = "./cache"}]
 
 [fmt]
 line_length = 100 # While we allow up to 120, we lint at 100 for readability.
 
 [profile.default.fuzz]
 runs = 256
+[rpc_endpoints]
+optimism_sepolia = "https://sepolia.optimism.io"
+polygon_amoy = "https://rpc-amoy.polygon.technology"
+arbitrum_sepolia = "https://sepolia-rollup.arbitrum.io/rpc"
+base_sepolia = "https://sepolia.base.org"
+avalanche_fuji = "https://api.avax-test.network/ext/bc/C/rpc"
+zora_sepolia = "https://sepolia.rpc.zora.energy"
